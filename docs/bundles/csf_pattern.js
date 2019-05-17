@@ -14320,6 +14320,7 @@ function checkCookie() {
 var comment = {
   vizname: VIZNAME,
   select_year: '',
+  select_purpose: '',
   select_mode: '',
   add_layer: '',
   comment_user: '',
@@ -14344,6 +14345,7 @@ function handleSubmit() {
       app.submit_loading = false;
     } else {
       comment.select_year = app.selected_year;
+      comment.select_purpose = app.selected_importance;
       comment.select_mode = app.selected_metric;
       comment.add_layer = app.addLayers;
       comment.comment_user = getCookie("username");
