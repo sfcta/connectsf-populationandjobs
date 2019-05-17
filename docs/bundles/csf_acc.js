@@ -14223,7 +14223,7 @@ var baseLayer = maplib.baseLayer;
 mymap.removeLayer(baseLayer);
 var url = 'https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}?access_token={accessToken}';
 var token = 'pk.eyJ1Ijoic2ZjdGEiLCJhIjoiY2ozdXBhNm1mMDFkaTJ3dGRmZHFqanRuOCJ9.KDmACTJBGNA6l0CyPi1Luw';
-var attribution = '<a href="http://openstreetmap.org">OpenStreetMap</a> | ' + '<a href="http://mapbox.com">Mapbox</a>';
+var attribution = '<a href="https://openstreetmap.org">OpenStreetMap</a> | ' + '<a href="https://mapbox.com">Mapbox</a>';
 baseLayer = L.tileLayer(url, {
   attribution: attribution,
   maxZoom: 18,
