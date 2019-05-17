@@ -34,8 +34,8 @@ mymap.setView([37.76889, -122.440997], 13);
 mymap.removeLayer(baseLayer);
 let url = 'https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}?access_token={accessToken}';
 let token = 'pk.eyJ1Ijoic2ZjdGEiLCJhIjoiY2ozdXBhNm1mMDFkaTJ3dGRmZHFqanRuOCJ9.KDmACTJBGNA6l0CyPi1Luw';
-let attribution ='<a href="http://openstreetmap.org">OpenStreetMap</a> | ' +
-                 '<a href="http://mapbox.com">Mapbox</a>';
+let attribution ='<a href="https://openstreetmap.org">OpenStreetMap</a> | ' +
+                 '<a href="https://mapbox.com">Mapbox</a>';
 baseLayer = L.tileLayer(url, {
   attribution:attribution,
   minZoom: 10,
