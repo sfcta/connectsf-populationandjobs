@@ -684,9 +684,14 @@ function showPosition(position) {
 
 function handleSubmit() {
   this.$refs.recaptcha.execute();
-  let timestamp = new Date();
   app.submit_loading = true;
-  
+}
+
+function onCaptchaVerified(recaptchaToken) {
+  const self = this;
+  self.$refs.recaptcha.reset();
+
+  let timestamp = new Date();
   setTimeout(function() {
     if (app.comment==null | app.comment=='') {
       app.submit_loading = false;
@@ -726,33 +731,6 @@ async function postComments(comment) {
   } catch (error) {
     console.log('comment error: ' + error);
   }
-}
-
-function onCaptchaVerified(recaptchaToken) {
-  const self = this;
-  self.$refs.recaptcha.reset();
-  if (!recaptchaToken) {
-    return console.log("recaptchaToken is required");
-  }
-
-  const verifyCaptchaOptions = {
-    secret: "6Le7GqIUAAAAAOmfXozDNDNWQwJE_0dIleut8q16",
-    response: recaptchaToken
-  };
-
-  fetch("https://www.google.com/recaptcha/api/siteverify", {
-    method: 'POST',
-    mode: 'no-cors',
-    body: JSON.stringify(verifyCaptchaOptions),
-    headers:{
-      'Content-Type': 'application/json',
-    }
-  })
-  .catch(error => console.error('Error:', error))
-  .then(response => function (response) {
-    // JSON.stringify(response)
-    console.log("Congratulations! We think you are human.");
-  });
 }
 
 function onCaptchaExpired() {
